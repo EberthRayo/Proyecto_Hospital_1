@@ -1,0 +1,491 @@
+/* Estilos globales */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #f8f9fa 50%, #e9ecef 50%);
+    margin: 0;
+    animation: fadeInBody 1s ease-in-out;
+}
+
+/* Estilos del sidebar */
+.sidebar {
+    background-color: #343a40;
+    color: white;
+    width: 300px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    overflow-y: auto;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    animation: slideInLeft 0.7s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    
+}
+
+.sidebar a{
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.sidebar button{
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.sidebar a:hover {
+    background-color: #495057;
+    transform: translateX(5px);
+}
+.sidebar button:hover {
+    background-color: #495057;
+    transform: translateX(5px);
+}
+.sidebar a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s;
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+}
+.sidebar button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s;
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+}
+.sidebar a:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+.sidebar button:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+.sidebar .back-icon {
+    color: #f8f9fa;
+}
+
+.sidebar .sidebar-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar .sidebar-header h2 {
+    color: #ffffff;
+    font-size: 1.6em;
+    margin: 0;
+    animation: fadeInHeader 1s ease-in-out;
+}
+
+.sidebar .sidebar-header img {
+    display: block;
+    margin: 10px auto;
+}
+
+/* Estilos del contenedor principal */
+.content-wrapper {
+    margin-left: 300px;
+    padding: 20px;
+    animation: fadeInContent 0.7s ease-in-out;
+}
+#registerParticularContainer {
+    min-height: 50px; /* Ajusta la altura según sea necesario */
+    padding: 10px; /* Espacio alrededor del botón */
+}
+
+#registerParticularButton {
+    display: inline-block; /* Ajusta para que el botón sea visible */
+}
+
+/* Estilos del contenedor del formulario */
+.form-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeInForm 0.7s ease-in-out;
+    max-width: 800px;
+    margin: auto;
+}
+
+.form-container h3 {
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #495057;
+}
+
+.form-check p {
+    margin-bottom: 5px;
+}
+
+/* Estilo básico para ocultar y mostrar secciones */
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+.subsection {
+    display: none;
+}
+
+.subsection.active {
+    display: block;
+}
+
+/* Estilos del contenedor de resultados */
+.result-container {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: fadeInResult 0.7s ease-in-out;
+}
+.resultados {
+    display: flex;
+    flex-direction: column;
+}
+
+.resultado-item {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+}
+
+.resultado-item p {
+    margin: 0.5rem 0;
+}
+
+.result-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #4A90E2;
+}
+
+.result-item {
+    margin-bottom: 10px;
+}
+
+.result-label {
+    font-weight: bold;
+    color: #333;
+}
+
+.result-value {
+    color: #555;
+}
+
+/* Estilos de la tabla */
+.table {
+    margin-top: 20px;
+    animation: fadeInTable 0.7s ease-in-out;
+}
+
+.table th,
+.table td {
+    vertical-align: middle;
+}
+
+.alert-container {
+    margin-top: 20px;
+}
+
+
+
+#calendar-container {
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    max-height: 400px;
+    overflow: auto; 
+}
+
+#calendar-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#calendar-controls button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#calendar-controls button:hover {
+    background-color: #0056b3;
+}
+
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+}
+
+.calendar-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-weight: bold;
+    background-color: #f0f0f0;
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.day {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    position: relative;
+    height: 60px; /* Altura de cada celda del día */
+}
+
+.day-number {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.event {
+    font-size: 12px;
+    padding: 2px;
+    border-radius: 3px;
+    text-align: center;
+    margin-top: 5px;
+    display: block;
+}
+
+.event.available {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.event.booked {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+#selected-date {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+}
+
+#selected-date p {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#selected-date button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+#selected-date button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos del botón */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Estilos de los inputs */
+.form-control,
+.form-select {
+    border: 2px solid #007bff;
+    border-radius: 25px;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #0056b3;
+    box-shadow: none;
+    transform: scale(1.02);
+}
+
+.form-check-input:checked {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.form-check-label {
+    margin-left: 5px;
+}
+
+/* Estilos del icono de regreso */
+.back-icon {
+    display: block;
+    margin-top: 20px;
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+.back-icon:hover {
+    text-decoration: underline;
+    color: #007bff;
+}
+/* Estilo para la animación de la tarjeta */
+.card-animated {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.card-animated.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Media queries para dispositivos pequeños */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        position: relative;
+        height: auto;
+        animation: none;
+    }
+
+    .content-wrapper {
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    .sidebar a {
+        display: inline-block;
+        margin: 5px 10px;
+    }
+
+    .sidebar button {
+        display: inline-block;
+        margin: 10px 15px;
+    }
+    .sidebar-header h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Keyframes para animaciones */
+@keyframes fadeInBody {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInHeader {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInContent {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInForm {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInResult {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInTable {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

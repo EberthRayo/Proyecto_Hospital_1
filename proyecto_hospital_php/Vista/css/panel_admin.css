@@ -1,0 +1,313 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: #f8f9fa;
+    font-family: 'Nunito', sans-serif;
+    margin: 0; /* Elimina margen por defecto del body */
+    padding: 0; /* Elimina padding por defecto del body */
+}
+
+.navbar {
+    background-color: #2c3e50;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand,
+.navbar-toggler-icon,
+.navbar-nav .nav-link {
+    color: #ecf0f1;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #bdc3c7;
+}
+
+.sidebar {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #34495e;
+    width: 250px;
+    padding-top: 60px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: width 0.3s ease;
+}
+
+.sidebar .nav-link {
+    color: #ecf0f1;
+    padding: 15px;
+    transition: background-color 0.3s ease, padding-left 0.3s ease;
+}
+
+.sidebar .nav-link:hover {
+    background-color: #2c3e50;
+    padding-left: 30px;
+}
+
+.sidebar .nav-link.active {
+    background-color: #2980b9;
+    padding-left: 30px;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(52, 152, 219, 0.1);
+}
+
+.table thead {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+}
+
+.table tbody tr:hover {
+    background-color: #d1ecf1;
+}
+
+.btn-danger {
+    background-color: #e74c3c;
+    border-color: #c0392b;
+}
+
+.btn-danger:hover {
+    background-color: #c0392b;
+    border-color: #96281b;
+}
+
+.btn-success {
+    background-color: #27ae60;
+    border-color: #1e8449;
+}
+
+.btn-success:hover {
+    background-color: #1e8449;
+    border-color: #166334;
+}
+
+.btn-outline-success {
+    color: #27ae60;
+    border-color: #27ae60;
+}
+
+.btn-outline-success:hover {
+    background-color: #27ae60;
+    color: #fff;
+}
+
+.main-content {
+    margin-left: 250px; /* Asegúrate de que el margen coincida con el ancho del sidebar */
+    padding: 20px;
+    flex: 1;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: margin-left 0.3s ease;
+}
+
+.dropdown-menu {
+    right: 0;
+    left: auto;
+}
+
+.table-wrapper {
+    padding: 0 15px; 
+    box-sizing: border-box;
+    width: 90%; 
+    overflow-x: auto; 
+    margin-left: 133px;
+    border-radius: 10px;
+}
+
+.table-responsive {
+    width: 100%; /* Asegura que la tabla se ajuste al ancho del contenedor */
+    overflow-x: auto; /* Permite el desplazamiento horizontal si la tabla es ancha */
+    -webkit-overflow-scrolling: touch; /* Mejora el desplazamiento en dispositivos móviles */
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px; 
+}
+
+h3 {
+    color: #2c3e50;
+    border-bottom: 2px solid #2980b9;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+form.d-flex {
+    display: flex;
+    gap: 10px;
+}
+
+.form-control:focus {
+    border-color: #2980b9;
+    box-shadow: 0px 0px 5px rgba(41, 128, 185, 0.5);
+}
+
+.nav-link.btn.btn-link {
+    padding: 0;
+}
+
+.container.mt-4 {
+    margin-top: 100px;
+}
+
+.alert {
+    position: fixed; /* Asegura que la alerta se muestre en la parte superior */
+    top: 10px; /* Ajusta la distancia desde la parte superior */
+    right: 400px; /* Ajusta la distancia desde la parte derecha */
+    z-index: 1050; /* Asegura que esté sobre otros elementos */
+    width: auto; /* Ajusta el ancho según sea necesario */
+}
+
+/* Para pantallas medianas (tabletas) */
+@media (max-width: 992px) {
+    .sidebar {
+        width: 200px; /* Reduce el ancho del sidebar en pantallas medianas */
+    }
+
+    .main-content {
+        margin-left: 200px; /* Ajusta el margen según el ancho del sidebar */
+    }
+}
+
+/* Para pantallas pequeñas (teléfonos) */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 0; /* Oculta el sidebar en pantallas pequeñas */
+        display: none; /* Oculta el sidebar en pantallas pequeñas */
+    }
+
+    .main-content {
+        margin-left: 0; /* Elimina el margen en pantallas pequeñas para evitar solapamiento */
+        padding: 10px;
+    }
+
+    .table-wrapper {
+        padding: 0 10px; /* Ajusta el padding en pantallas más pequeñas */
+    }
+}
+
+/* Para pantallas muy pequeñas (teléfonos pequeños) */
+@media (max-width: 576px) {
+    .table-wrapper {
+        padding: 0 5px; /* Ajusta el padding en pantallas muy pequeñas */
+    }
+
+    .main-content {
+        padding: 10px;
+    }
+}
+#calendar-container {
+    width: 90%;
+    max-width: 850px;
+    margin: 20px auto;
+    font-size: 14px;
+    margin-left: 400px;
+    margin-top: 100px;
+}
+
+#calendar-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+.calendar-header div {
+    width: calc(100% / 7);
+    text-align: center;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+.calendar-days {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #fff;
+    border-radius: 8px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.calendar-days .day {
+    width: calc(100% / 7);
+    min-height: 150px;
+    position: relative;
+    box-sizing: border-box;
+    padding: 10px;
+    overflow: hidden;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.calendar-days .day:last-child {
+    border-right: none;
+}
+
+.day-number {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    z-index: 1;
+    position: relative;
+}
+
+.event {
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    margin-bottom: 5px;
+    overflow-y: auto;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 2;
+}
+.dropdown-menu {
+    display: none;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+.event-title {
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+.event-time {
+    font-size: 10px;
+    color: #ddd;
+}
+
+@media (max-width: 768px) {
+    .calendar-days .day {
+        min-height: auto;
+    }
+
+    .event {
+        max-height: 80px;
+    }
+}
